@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Live Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.11/sass.sync.min.js"></script>
+
+</head>
+
+<body>
+    <div class="code-editor">
+                    <button id="save-button">SAVE</button>
+                    <button id="lock-button">LOCK</button>
+
+        <div class="code">
+            <div class="html-code">
+                <h1><img src="images/html.png" alt="">HTML<button id="copy-html-button">Copy HTML</button></h1>
+
+                <textarea spellcheck="false"></textarea>
+            </div>
+            <div class="css-code">
+                <h1><img src="images/CSS.png" alt="">CSS<button id="copy-css-button">Copy CSS</button></h1>
+<select id="style-type">
+    <option value="css">CSS</option>
+    <option value="scss">SCSS</option>
+</select>
+                <textarea spellcheck="false"></textarea>
+            </div>
+            <div class="js-code">
+                <h1><img src="images/js.png" alt="">JAVASCRIPT<button id="copy-js-button">Copy JS</button></h1>
+                <textarea spellcheck="false"></textarea>
+            </div>
+        </div>
+        <iframe id="result"></iframe>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
