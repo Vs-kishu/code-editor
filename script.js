@@ -6,6 +6,25 @@ const result = document.querySelector("#result");
 const saveButton = document.querySelector("#save-button");
 const lockButton = document.querySelector("#lock-button");
 
+const copyHtmlButton = document.querySelector("#copy-html-button");
+const copyCssButton = document.querySelector("#copy-css-button");
+const copyJsButton = document.querySelector("#copy-js-button");
+
+copyHtmlButton.addEventListener("click", () => {
+  navigator.clipboard.writeText(html_code.value);
+  alert("HTML code copied to clipboard");
+});
+
+copyCssButton.addEventListener("click", () => {
+  navigator.clipboard.writeText(css_code.value);
+  alert("CSS code copied to clipboard");
+});
+
+copyJsButton.addEventListener("click", () => {
+  navigator.clipboard.writeText(js_code.value);
+  alert("JavaScript code copied to clipboard");
+});
+
 // Function to save the code to local storage
 saveButton.addEventListener("click", () => {
   localStorage.setItem("html_code", html_code.value);
