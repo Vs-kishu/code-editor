@@ -3,6 +3,26 @@ const css_code = document.querySelector(".css-code textarea");
 const js_code = document.querySelector(".js-code textarea");
 const result = document.querySelector("#result");
 
+const saveButton = document.querySelector("#save-button");
+const lockButton = document.querySelector("#lock-button");
+
+// Function to save the code to local storage
+saveButton.addEventListener("click", () => {
+  localStorage.setItem("html_code", html_code.value);
+  localStorage.setItem("css_code", css_code.value);
+  localStorage.setItem("js_code", js_code.value);
+  alert("Code saved to local storage");
+});
+
+// Function to toggle the lock/unlock state
+let isLocked = false;
+lockButton.addEventListener("click", () => {
+  isLocked = !isLocked;
+  lockButton.textContent = isLocked ? "Unlock" : "Lock";
+  html_code.disabled = isLocked;
+  css_code.disabled = isLocked;
+  js_code.disabled = isLocked;
+});
 const styleType = document.querySelector("#style-type");
 styleType.addEventListener("change", run);
 function run() {
