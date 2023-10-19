@@ -11,6 +11,10 @@ where you write HTML, CSS, Javascript seperately and you can aslo choose between
 - copy specific code
 - some basic indentation
 
+## 🔗 Links
+
+[![portfolio](https://img.shields.io/badge/live-000?style=for-the-badge&logoColor=white)](https://code-editor-34.netlify.app/)
+
 ## Run Project
 
 ```bash
