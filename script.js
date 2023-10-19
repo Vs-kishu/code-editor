@@ -12,7 +12,18 @@ function run() {
       `<style>${css_code.value}</style>` + html_code.value;
   } else if (styleType === "scss") {
     // Compile SCSS to CSS using Sass.js
-    console.log("scss here");
+    const scssCode = css_code.value;
+
+    Sass.compile(scssCode, function (res) {
+      if (res.status === 0) {
+        const compiledCss = res.text;
+
+        result.contentDocument.body.innerHTML =
+          `<style>${compiledCss}</style>` + html_code.value;
+      } else {
+        console.error("SCSS compilation error:", result.formatted);
+      }
+    });
   }
 
   result.contentWindow.eval(js_code.value);
