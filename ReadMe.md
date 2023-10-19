@@ -8,6 +8,7 @@ where you write HTML, CSS, Javascript seperately and you can aslo choose between
 - choose CSS or SCSS
 - Save the code
 - Lock the code
+- copy specific code
 - some basic indentation
 
 ## Run Project
