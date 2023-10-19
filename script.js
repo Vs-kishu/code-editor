@@ -79,3 +79,64 @@ css_code.value = localStorage.css_code || "";
 js_code.value = localStorage.js_code || "";
 
 run();
+
+// Function to handle the "Tab" key press
+function handleTabKeyPress(textArea, event) {
+  if (event.key === "Tab") {
+    event.preventDefault(); // Prevent the default Tab behavior
+
+    // Insert spaces (or tabs if preferred) at the cursor position
+    const cursorPosition = textArea.selectionStart;
+    const currentCode = textArea.value;
+    const indentedCode =
+      currentCode.slice(0, cursorPosition) +
+      "  " +
+      currentCode.slice(cursorPosition);
+
+    textArea.value = indentedCode;
+
+    // Move the cursor after the inserted spaces
+    textArea.setSelectionRange(cursorPosition + 2, cursorPosition + 2);
+  }
+}
+
+// Attach the handleTabKeyPress function to the keydown event of text areas
+html_code.addEventListener("keydown", (event) =>
+  handleTabKeyPress(html_code, event)
+);
+css_code.addEventListener("keydown", (event) =>
+  handleTabKeyPress(css_code, event)
+);
+js_code.addEventListener("keydown", (event) =>
+  handleTabKeyPress(js_code, event)
+);
+
+function handleTabKeyPress(textArea, event) {
+  if (event.key === "Tab") {
+    event.preventDefault();
+
+    // Insert spaces (or tabs if preferred) at the cursor position
+    const cursorPosition = textArea.selectionStart;
+    const currentCode = textArea.value;
+    const indentedCode =
+      currentCode.slice(0, cursorPosition) +
+      "  " +
+      currentCode.slice(cursorPosition);
+
+    textArea.value = indentedCode;
+
+    // Move the cursor after the inserted spaces
+    textArea.setSelectionRange(cursorPosition + 2, cursorPosition + 2);
+  }
+}
+
+// Attach the handleTabKeyPress function to the keydown event of text areas
+html_code.addEventListener("keydown", (event) =>
+  handleTabKeyPress(html_code, event)
+);
+css_code.addEventListener("keydown", (event) =>
+  handleTabKeyPress(css_code, event)
+);
+js_code.addEventListener("keydown", (event) =>
+  handleTabKeyPress(js_code, event)
+);
